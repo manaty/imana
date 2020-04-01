@@ -14,8 +14,8 @@ Roles
 
 A user could be both MedAdmin and Practitioner, he cannot be DataAdmin and something else.
 
-Data Model
-----------
+Data Model (simplified)
+-----------------------
 ![Imana Data Model](https://raw.githubusercontent.com/manaty/imana/master/docs/specs/Imana%20data%20model.png)
 
 Processes
