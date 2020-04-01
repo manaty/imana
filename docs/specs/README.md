@@ -8,24 +8,54 @@ Dataprocessing Organization (DataOrg) : Any IT company, University laboratory, i
 
 Roles
 -----
-* MedAdmin : Administrator of a Medical Organization 
-* Sonographer : Any healthcare professional that belong to an organization and can upload ultrasound images in the platform.
-* TechAdmin : Administrator of a Technology Organization that will use the images of the plateform to provide analyzis service (typically through usage of AI models)
+* MedAdmin : Administrator of a MedOrg 
+* Practitioner : Any healthcare professional that belong to an organization and can upload ultrasound images in the platform.
+* DataAdmin : Administrator of a DataOrg that will use the images of the plateform to provide analyzis service (typically through usage of AI models)
 
-A user could be both MedAdmin and Sonographer
+A user could be both MedAdmin and Practitioner, he cannot be DataAdmin and something else.
+
+Data Model
+----------
+![Imana Data Model](https://raw.githubusercontent.com/manaty/imana/master/docs/specs/Imana%20data%20model.png)
 
 Processes
 ---------
 
-### MedAdmin creation
-When an medical organization member contacts us, for instance after visiting https://manaty.org
+### MedAdmin and DataAdmin creation
+When an medical or data organization member contacts us, for instance after visiting https://manaty.org
 we creates him a user on meveo & keycloack with a temorary password and with the email he used to send him notifications
 
 all operations for administrator management are handeled by the meveo admin.
 
-### Sonographer creation,update, deletion
-The MedAdmin can create and manage sonographer accounts.
+### Practitioner creation,update, deletion
+The MedAdmin can create and manage practitioner accounts.
 
-### 
+### ImanaService creation
+When a DataOrg provides a Image Analysis Service, Manaty validates that the service comply to the ImanaService technical interface then configure it in Meveo. The meveo admin creates then an ImanaService entity that will be available to all MedOrgs.
+An ImanaService have 2 flags :
+
+* isTraining : determines if the service is currently accepting measures from MedOrgs to train itself
+
+* isAnalysing : determines if the service is currently ready to analyze measures
+
+Once the ImanaServices are created then can be managed by the MedAdmins of its MedOrg.
+
+### MedOrg configuratin
+A medical organization have the choice among the Image analysis services it want to train and to use. Any MedAdmin can select among all the available ImanaServices the ones it allows its organization to train and use.
+
+An organization could also choose its measures to be public. In that case all services can use its data and it can use all services.
+
+### Visit creation
+When a practitionner perform an ultrasound scann session with a patient, it uses the app to create a Visit.
+
+He then fill the minimal information needed to train or use the image analysis services while not revealing any information about the patient that could reveal its identity.
+Then for each ultrasound picture he creates a measure indicating the position of the probe (Upper Left lobe, ...) and he uploads the associated picture.
+
+In case he want the measure to be used as a training set for analysis services, he adds to it an analysis result.
+
+In case he need an automated analysis of the patient condition, he submit the visit for analysis.
+
+He can then wait for the results or asked to be notified when results are available.
+ 
 
 
