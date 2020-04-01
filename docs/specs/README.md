@@ -40,7 +40,7 @@ An ImanaService have 2 flags :
 
 Once the ImanaServices are created then can be managed by the MedAdmins of its MedOrg.
 
-### MedOrg configuratin
+### MedOrg configuration
 A medical organization have the choice among the Image analysis services it want to train and to use. Any MedAdmin can select among all the available ImanaServices the ones it allows its organization to train and use.
 
 An organization could also choose its measures to be public. In that case all services can use its data and it can use all services.
