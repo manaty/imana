@@ -46,16 +46,23 @@ A medical organization have the choice among the Image analysis services it want
 An organization could also choose its measures to be public. In that case all services can use its data and it can use all services.
 
 ### Visit creation
-When a practitionner perform an ultrasound scann session with a patient, it uses the app to create a Visit.
+When a practitioner perform an ultrasound scann session with a patient, it uses the app to create a Visit.
 
 He then fill the minimal information needed to train or use the image analysis services while not revealing any information about the patient that could reveal its identity.
 Then for each ultrasound picture he creates a measure indicating the position of the probe (Upper Left lobe, ...) and he uploads the associated picture.
 
 In case he want the measure to be used as a training set for analysis services, he adds to it an analysis result.
 
-In case he need an automated analysis of the patient condition, he submit the visit for analysis.
+In case he needs an automated analysis of the patient condition, he submit the visit for automated analysis.
+
+In case he needs a manual analysis of the patient condition, he submit the visit for manual analysis.
 
 He can then wait for the results or asked to be notified when results are available.
  
+### Analysis result creation
+When a practioner connects to its account he can see all the visits made by others for which manual analysis is required.
 
+He can then visualize or download the images and create Analysis results.
+
+For Visit marked for automatic results, an API accesible to Image Analysis service providers allow them to list all the visits corresponding to organizations that agreed to submit their data for training and another rest API allow them to automatically create Result Analysis on these visits.
 
