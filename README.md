@@ -4,3 +4,8 @@ Image analysis plateform for ultrasound and other medical source available at [m
 This plateform is based on [Meveo](https://meveo.org), it allows radiologists to upload for free lungs 
 ultrasound image to get a realtime detection of covid19.
 
+Documentation
+-------------
+
+[Technical specifications](https://github.com/manaty/imana/tree/master/docs/specs)
+
